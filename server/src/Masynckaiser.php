@@ -33,8 +33,7 @@ class Masynckaiser implements MessageComponentInterface {
 
     public function onMessage(ConnectionInterface $from, $msg) {
         $numRecv = count($this->clients) - 1;               
-        // $decodedText = json_decode($msg);
-        $decodedText = $msg;
+        $decodedText = json_decode($msg);
 
         if ($decodedText == NULL) {
             echo "Message is not in JSON format ($msg).\n";
