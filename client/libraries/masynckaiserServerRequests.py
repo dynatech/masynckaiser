@@ -102,20 +102,9 @@ def getDataUpdateCommand(schema, table, PKeysValsJson, limit = 1000):
         values.append(value)
         
     if not values[0]:
-        query = """
-                SELECT * 
-                FROM %s 
-                ORDER BY %s asc 
-                LIMIT %s
-                """ % (table, keys[0], limit)
+        query = """SELECT * FROM %s ORDER BY %s asc LIMIT %s""" % (table, keys[0], limit)
     else:
-        query = """
-                SELECT * 
-                FROM %s 
-                WHERE %s >= '%s' 
-                ORDER BY %s asc 
-                LIMIT %s
-                """ % (table, keys[0], values[0], keys[0], limit)
+        query = """SELECT * FROM %s WHERE %s >= '%s' ORDER BY %s asc LIMIT %s""" % (table, keys[0], values[0], keys[0], limit)
             
     print "%s Query: %s" % (common.whoami(), query)
 
