@@ -500,7 +500,7 @@ def syncStartUp(host, port, batchRows=200):
     ws = create_connection(url)
 
     #List of blocked schemas
-    schemasBlocked = ["information_schema","mysql","performance_schema","phpmyadmin","bugtracker2","comms_db"]
+    schemasBlocked = ["information_schema","mysql","performance_schema","phpmyadmin","bugtracker2","comms_db","masynckaiser"]
 
     #Get names of all schemas
     schemas = masyncGD.getSchemaList(ws)
