@@ -117,13 +117,13 @@ def getDataUpdateCommand(schema, table, PKeysValsJson, limit = 1000):
                 LIMIT %s
                 """ % (table, keys[0], values[0], keys[0], limit)
             
-#    print "%s Query: %s" % (common.whoami(), query)
+    print "%s Query: %s" % (common.whoami(), query)
 
     request = """{"dir":0,"action":"read",
                   "query":"%s",
                   "schema":"%s"}""" % (query, schema)
 
-#    print "%s Request: %s" % (common.whoami(), request)
+    print "%s Request: %s" % (common.whoami(), request)
     return request
 
 
