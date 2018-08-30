@@ -1,4 +1,5 @@
 import common
+import json
 
 #Show the schemas available from the masynckaiser server
 #Note: even though this information is sent to the client, the schema 
@@ -16,8 +17,7 @@ def showTables(schema=None):
         print msgError
         return None
     
-    request = """{"dir":0,"action":"read","query":"SHOW TABLES",
-                  "schema":"%s"}""" % (schema)
+    request = """{"dir":0,"action":"read","query":"SHOW TABLES","schema":"%s"}""" % (schema)
     return request
 
 #Find if table exists in the Web Socket Server

@@ -37,8 +37,8 @@ class Masynckaiser implements MessageComponentInterface {
 
         if ($decodedText == NULL) {
             echo "Message is not in JSON format ($msg).\n";
-            echo "Decoded Text ($decodedText).\n";
-            return NULL;
+            echo "JSON last error: " . json_last_error() . "\n";
+            return;
         }
         else {
             echo "Valid data\n";
