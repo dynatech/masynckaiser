@@ -26,8 +26,9 @@ def main():
     host = "192.168.150.75"
     port = 5055
     schema = "senslopedb"
+    batchRows = 5000
     
-    masync.syncStartUp(host, port)
+    masync.syncStartUp(host, port, batchRows)
 #    masync.syncRealTime(host, port)
 #    masync.testSendRecv(host, port, schema, table)
 #    masync.threadedSendRecv(host, port, schema, table)
