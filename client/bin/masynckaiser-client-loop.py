@@ -29,11 +29,12 @@ def main():
     batchRows = 5000
     
     while True:
-      print('Start Time: %s' % time.ctime())
       masync.syncStartUp(host, port, batchRows)
 
       # Sleep for 10 min
+      print('Start sleep: %s' % time.ctime())
       time.sleep(600)
+      print('End sleep: %s' % time.ctime())
 
 try:
   main()
